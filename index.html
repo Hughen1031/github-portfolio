@@ -3,25 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <style>
-        body {background-color: black;
-              font-family:Arial, Helvetica, sans-serif;
-              color: white;
+    <title>Hughen Maru Sarmiento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class= "container">
+            <nav>
+                
+                <img src="logo.png" class="logo">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+            </nav>
+            <div class= "header-text">            
+                <h1>Good Day! <br> I am <span>Hughen</span> Maru M. Sarmiento</h1>
+            </div>
+        </div>
+    </div>
+
+<!-----about----->
+    <div id= "about">
+        <div class= "container">
+            <div class= "row">
+                <div class="about-col-1">
+                    <img src="user.jpg">
+                </div>
+                
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu blandit sem, eget efficitur ante. Cras vel neque velit. Fusce malesuada varius ante, eget sollicitudin urna. 
+                    Nullam tempor lacinia pharetra. Curabitur rhoncus, nulla ac malesuada luctus, erat massa suscipit elit, eu dignissim orci elit sit amet tellus. Mauris a venenatis lorem, et porta ligula. 
+                    Proin vitae euismod quam, nec sagittis enim. Nunc ut dapibus nulla. Vivamus sodales, lorem eu consequat molestie, lacus odio venenatis velit, eget scelerisque nibh libero eu tortor. Maecenas consectetur ipsum leo.
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">                        
+                        <h3 class="languages">Has background knowledge in different programming languages like:</h3>                        
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>Java</li>
+                            <li>C</li>
+                            <li>C++</li>
+                            <li>Php</li>
+                            <li>Phyton</li>
+                        </ul>
+                    </div>
+
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li>Currently I don't yet have an Experience since I'm a fresh graduate student.</li>
+                        </ul> 
+                    </div>
+
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019-2023</span><br>Bachelor of Science Major in Computer Engineering</li>
+                            <li><span>2017-2019</span><br>Science, Technology, Engineering, and Mathematics (STEM)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents")
+
+    function opentab(tabname){
+        for (tablink of tablinks){
+            tablink.classList.remove("active-link"); 
         }
 
-        h1 {color: white;}
-        h2 {color: white;}
-        p {color: white;}
-        button {border: none;}
-    </style>
-</head>
+        for (tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab"); 
+        }
 
-<body>
-    <h1> My Webpage </h1>
-    <h2> About Me </h2>
-    <p> A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. </p>
-    <button> Click here to learn more </button>
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
 
 </body>
 </html>
